@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>自動搶勞作程式</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="jquery-1.11.3.min.js"></script>
+		<!--[if lte IE 9]><script type="text/javascript">alert("您的瀏覽器尚未被完整支援!\n建議改用其他瀏覽器。");location='https://www.google.com/chrome';</script><![endif]-->
+	</head>
+	<body>
+		<div id="display">
+			<h1>自動搶勞作程式</h1>
+			<div id="help">
+			    <h2>說明</h2>
+			    <p>1. 登入龍華學生資訊系統</p>
+			    <p>2. 將以下方框連結複製下來</p>
+			    <p>3. 於您登入的學生資訊系統的網址列上貼上，並在最前端補上「javascript:」後按下<font class="kb">Enter</font></p>
+			    <p>4. 即可開始使用</p>
+			</div>
+            <a id="url" style="display:block;margin-top:-1.5em;width:100%" href="javascript:(function(){var f=document.createElement('script');f.setAttribute('type','text/javascript');f.setAttribute('src','https://hans00.github.io/lhu_labor/autorun.js');})()">javascript:(function(){var f=document.createElement('script');f.setAttribute('type','text/javascript');f.setAttribute('src','https://hans00.github.io/lhu_labor/autorun.js')})()</a>
+            <a href="#" onclick="window.close()" class="btn" style="padding:0.2em;position:relative;top:1.5em;">關閉</a>
+		</div>
+	</body>
+</html>

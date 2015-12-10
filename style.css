@@ -1,0 +1,107 @@
+
+body {
+    margin: 0;
+    text-align: center;
+}
+#help {
+    text-align: left;
+    border: solid 1px #000;
+    padding: 0.9em 0.6em 0.9em 1.2em;
+    margin-bottom: 2em;
+    height: 14em;
+    overflow-y: auto;
+}
+#help > h2 {
+    text-align: center;
+    margin: 0;
+}
+#help > p {
+    margin-left : 1.5em; 
+    text-indent : -1em ;
+    margin: 0.5em;
+    line-height: 1.1em;
+}
+a.btn {
+    margin: 1em;
+    padding: 0.8em;
+    border: solid #333 0.2em;
+    background: #ddd;
+    color: #000;
+    text-decoration: none;
+}
+a.btn:hover {
+    background: #bbb;
+}
+h1 {
+    margin: 0;
+    margin-bottom: 0.6em;
+}
+a:not(.btn) {
+    text-decoration: none;
+    color: #333;
+}
+a:not(.btn):hover {
+    text-decoration: underline;
+    color: #555;
+}
+#url {
+    display: none;
+    margin: 2em auto -1em auto;
+    width: 15em;
+    height: 1em;
+    border: solid 1px;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+#url::after {
+    content: "...";
+    position: absolute;
+    right: 2px;
+    background: #fff;
+}
+.kb {
+    padding: 1px;
+    font-size: 0.5em;
+    border-top: 0.4em #888 solid;
+    border-left: 0.4em #333 solid;
+    border-bottom: 0.4em #000 solid;
+    border-right: 0.4em #222 solid;
+    display: inline;
+    background: white;
+}
+@media screen and (min-height: 24em) and (min-width: 660px) {
+    #display {
+        width: 60vw;
+        position: absolute;
+        top: calc( 50vh - 16em );
+        left: calc( 20vw - 4em );
+        padding: 2em;
+        border: solid 2em;
+        background: #aaa;
+        overflow-y: scroll;
+    }
+}
+@media screen and (max-height: 24em) {
+    #display {
+        width: calc(100vw - 8em);
+        padding: 2em;
+        border: solid 2em;
+        background: #aaa;
+    }
+}
+@media screen and (max-width: 660px) {
+    #display {
+        width: calc(100vw - 8em);
+        padding: 2em;
+        border: solid 2em;
+        background: #aaa;
+        height: auto;
+    }
+    #help {
+        height: auto;
+    }
+    a.btn {
+        margin: 0.5em;
+    }
+}

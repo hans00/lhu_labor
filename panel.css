@@ -1,0 +1,60 @@
+html {
+    display: none;
+}
+#labor_panel {
+    display: block;
+}
+#labor_panel textarea {
+    display: block;
+    width: 55vw;
+    margin: auto auto 2em auto;
+    height: 10vh;
+}
+#labor_panel * {
+    text-align: center;
+    vertical-align: middle;
+}
+#labor_panel body {
+    margin: 0;
+}
+#labor_panel #display {
+    width: 60vw;
+    height: 50vh;
+    position: fixed;
+    top: calc( 25vh - 2em );
+    left: calc( 20vw - 2em );
+    padding: 1em;
+    border: solid 2em;
+    background: #aaa;
+    overflow-y: scroll;
+}
+#labor_panel ul, li {
+    padding:0;
+    margin:0;
+}
+#labor_panel li {
+    list-style: none;
+    margin: auto;
+    display: block;
+    width: 29.5vw;
+}
+#labor_panel #a, #labor_panel .a {
+    float: left;
+}
+#labor_panel #b, #labor_panel .b {
+    float: right;
+}
+#labor_panel .a, #labor_panel .b {
+    border-bottom: solid 1px #000;
+}
+#labor_panel h1 {
+    font-size: 2em;
+}
+#labor_panel button {
+    margin: 0.5em;
+}
+#labor_panel #li {
+    height: calc(50vh - 17.5em);
+    margin-top: 1.5em;
+    overflow-y: scroll;
+}
