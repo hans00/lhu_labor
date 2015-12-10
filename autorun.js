@@ -1,3 +1,6 @@
+if(location.split("/")[2]!="www.lhu.edu.tw"){
+    alert("請勿於非龍華學生系統的網頁上開啟此程式。");
+}
 if(!window.jQuery){
     var f=document.createElement('script');
     f.setAttribute('type','text/javascript');
@@ -7,7 +10,11 @@ if(!window.jQuery){
     f.setAttribute('type','text/javascript');
     f.setAttribute('src','https://hans00.github.io/lhu_labor/md5.min.js');
     document.getElementsByTagName('head')[0].appendChild(f);
+    while(!window.jQuery){
+        var jq=true;
+    }
 }
+var $=window.jQuery;
 if(!$(document).has("#labor_panel")){
     $.get('https://hans00.github.io/lhu_labor/panel.html',
     function (data) {
