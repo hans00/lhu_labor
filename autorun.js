@@ -19,8 +19,8 @@ if(!window.jQuery){
     f.setAttribute('src','https://hans00.github.io/lhu_labor/md5.min.js');
     document.getElementsByTagName('head')[0].appendChild(f);
 }
-if($("#labor_panel").length==0){
-   alert(1); $.get('https://hans00.github.io/lhu_labor/panel.html')
+if($("#labor_panel").length<1){
+    $.get('https://hans00.github.io/lhu_labor/panel.html')
     .done(function (data) {
         document.write(data);
         $("#display h1").html("已就緒");
