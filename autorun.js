@@ -19,12 +19,10 @@ if(!window.jQuery){
     f.setAttribute('src','https://hans00.github.io/lhu_labor/md5.min.js');
     document.getElementsByTagName('head')[0].appendChild(f);
 }
-if(jQuery(document).has("#labor_panel")==[]){
+if($(document).has("#labor_panel")==[]){
     $.get('https://hans00.github.io/lhu_labor/panel.html')
     .done(function (data) {
-        //$("html").remove();
         document.write(data);
-        //$(window).html(data);
         $("#display h1").html("已就緒");
         $("#l,#p").change(function(){
             Interval($("#l").val()*1000, $("#p").val()*1000);
