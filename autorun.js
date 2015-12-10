@@ -1,10 +1,31 @@
-var f=document.createElement('script');
-f.setAttribute('type','text/javascript');
-f.setAttribute('src','https://hans00.github.io/lhu_labor/jquery.min.js');
-var f=document.createElement('script');
-f.setAttribute('type','text/javascript');
-f.setAttribute('src','https://hans00.github.io/lhu_labor/md5.min.js');
-
+if(!window.jQuery){
+    var f=document.createElement('script');
+    f.setAttribute('type','text/javascript');
+    f.setAttribute('src','https://hans00.github.io/lhu_labor/jquery.min.js');
+    document.getElementsByTagName('head')[0].appendChild(f);
+    var f=document.createElement('script');
+    f.setAttribute('type','text/javascript');
+    f.setAttribute('src','https://hans00.github.io/lhu_labor/md5.min.js');
+    document.getElementsByTagName('head')[0].appendChild(f);
+}
+if(!$(document).has("#labor_panel")){
+    $.get('https://hans00.github.io/lhu_labor/panel.html',
+    function (data) {
+        //$("html").remove();
+        $(document).html(data);
+        $("#display h1").html("已就緒");
+        $("#l,#p").change(function(){
+            Interval($("#l").val()*1000, $("#p").val()*1000);
+        });
+    });
+} else {
+    $(document).ready(function(){
+        $("#display h1").html("已就緒");
+        $("#l,#p").change(function(){
+            Interval($("#l").val()*1000, $("#p").val()*1000);
+        });
+    });
+}
 var iList=1000, iProc=800, en=false;
 var BaseUrl="https://www.lhu.edu.tw/StudAp/C00/C4001/Apply/", logData={}, proc=false, loading=false;
 function log(text){
@@ -129,9 +150,3 @@ function _switch(e){
 	var val=(en)?"結束":"啟動";
 	$(e).text(val);
 }
-$(document).ready(function(){
-	$("#display h1").html("已就緒");
-	$("#l,#p").change(function(){
-		Interval($("#l").val()*1000, $("#p").val()*1000);
-	});
-});

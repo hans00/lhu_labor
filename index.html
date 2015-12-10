@@ -7,7 +7,7 @@
 		<script src="jquery.min.js"></script>
 		<!--[if lte IE 9]><script type="text/javascript">alert("您的瀏覽器尚未被完整支援!\n建議改用其他瀏覽器。");location='https://www.google.com/chrome';</script><![endif]-->
 		<script>
-            var jsURL="javascript:(function(){var f=document.createElement('script');f.setAttribute('type','text/javascript');f.setAttribute('src','https://hans00.github.io/lhu_labor/autorun.js')})()",Title="自動搶勞作程式 @ LHU";
+            var jsURL="javascript:(function(){var f=document.createElement('script');f.setAttribute('type','text/javascript');f.setAttribute('src','https://hans00.github.io/lhu_labor/autorun.js');document.getElementsByTagName('head')[0].appendChild(f)})()",Title="自動搶勞作程式 @ LHU";
             function bookmark(){
                 if(window.sidebar){//FF
                         window.sidebar.addPanel(jsURL,Title,Title);
