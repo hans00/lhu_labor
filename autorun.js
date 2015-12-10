@@ -1,6 +1,6 @@
 var f=document.createElement('script');
 f.setAttribute('type','text/javascript');
-f.setAttribute('src','https://hans00.github.io/lhu_labor/jquery-1.11.3.min.js');
+f.setAttribute('src','https://hans00.github.io/lhu_labor/jquery.min.js');
 var f=document.createElement('script');
 f.setAttribute('type','text/javascript');
 f.setAttribute('src','https://hans00.github.io/lhu_labor/md5.min.js');
