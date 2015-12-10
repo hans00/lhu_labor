@@ -23,7 +23,8 @@ if(!jQuery(document).has("#labor_panel")){
     $.get('https://hans00.github.io/lhu_labor/panel.html')
     .done(function (data) {
         //$("html").remove();
-        $(document).html(data);
+        document.write(data);
+        //$(window).html(data);
         $("#display h1").html("已就緒");
         $("#l,#p").change(function(){
             Interval($("#l").val()*1000, $("#p").val()*1000);
