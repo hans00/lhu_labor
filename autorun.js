@@ -23,17 +23,12 @@ if($("#labor_panel").length<1){
     $.get('https://hans00.github.io/lhu_labor/panel.html')
     .done(function (data) {
         document.write(data);
-        $("#display h1").html("已就緒");
-        $("#l,#p").change(function(){
-            Interval($("#l").val()*1000, $("#p").val()*1000);
-        });
+        init_panel();
     });
 } else {
     $(document).ready(function(){
         $("#display h1").html("已就緒");
-        $("#l,#p").change(function(){
-            Interval($("#l").val()*1000, $("#p").val()*1000);
-        });
+        init_panel();
     });
 }
 var iList=1000, iProc=800, en=false;
@@ -159,4 +154,10 @@ function _switch(e){
     if(en){getlist();}
 	var val=(en)?"結束":"啟動";
 	$(e).text(val);
+}
+function init_panel(){
+    $("#display h1").html("已就緒");
+    $("#l,#p").change(function(){
+        Interval($("#l").val()*1000, $("#p").val()*1000);
+    });
 }
