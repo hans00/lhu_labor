@@ -20,7 +20,7 @@ if(!window.jQuery){
     document.getElementsByTagName('head')[0].appendChild(f);
 }
 if($(document).has("#labor_panel")==[]){
-    $.get('https://hans00.github.io/lhu_labor/panel.html')
+   alert(1); $.get('https://hans00.github.io/lhu_labor/panel.html')
     .done(function (data) {
         document.write(data);
         $("#display h1").html("已就緒");
