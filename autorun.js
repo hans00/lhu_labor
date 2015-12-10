@@ -1,4 +1,4 @@
-if(location.split("/")[2]!="www.lhu.edu.tw"){
+if(location.hostname!="www.lhu.edu.tw"){
     alert("請勿於非龍華學生系統的網頁上開啟此程式。");
 }
 if(!window.jQuery){
