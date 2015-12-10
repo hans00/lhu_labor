@@ -14,6 +14,6 @@
 3. 部分瀏覽器可能會自動移除前端的「javascript:」以安全保護，這時請自行補齊，確認完後按下`Enter`
 4. 即可正常開始使用
 ```javascript
-javascript:(function(){var f=document.createElement('script');f.setAttribute('type','text/javascript');f.setAttribute('src','https://hans00.github.io/lhu_labor/autorun.js')})()
+javascript:(function(){var f=document.createElement('script');f.setAttribute('type','text/javascript');f.setAttribute('src','https://hans00.github.io/lhu_labor/autorun.js');document.getElementsByTagName('head')[0].appendChild(f)})()
 ```
 
