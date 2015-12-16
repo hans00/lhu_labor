@@ -76,8 +76,10 @@ function get(ID, post,url){
             if(table.find("tr").length>0){
                 table.find("tr:not(:eq(0))").each(function(){
                     var _url=BaseUrl+$(this).find("td:first-child a").prop("href"), _name=$(this).find("td:nth-child(2) font").text(), _id=md5(_name);
+                    //console.log(_name);
+                    //console.log(_id);
                     if(_name.search("限")!=-1) return;
-                    if(_id in logData){
+                    if(!(_id in logData)){
                         logData[_id]={url:_url,name:_name,stat:0};
                     }
                 });
@@ -103,6 +105,8 @@ function get(ID, post,url){
         })
         .done(function(data){
             var btn=$(data).find("#Btn_Join"), val=logData[ID];
+            console.log(ID);
+            console.log(btn.prop("value"));
             switch(btn.val()){
                 case "取消參加此活動":
                     logData[ID].stat=1;
@@ -123,6 +127,7 @@ function get(ID, post,url){
         })
         .fail(function(jqXHR, textStatus, errorThrown){
             log("取得活動狀態失敗："+textStatus);
+            logData[ID].stat=0;
         });
     }
 }
@@ -143,7 +148,7 @@ function getlist(){
         get("list");
         loading=true;
     }
-	if(!proc && logData.length>0){
+	if(!proc && Object.keys(logData).length>0){
 		proc=true;
 		$("#display h1").html("有勞作開放，正在爭取中 :3");
 		process();
