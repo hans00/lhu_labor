@@ -72,10 +72,11 @@ function get(ID, post,url){
                 _switch();
                 return;
             }
+            alert(1);
             var table=$(data).find("#DG_Content");
             alert(table.find("tr:first-child td:first-child font").text());
-            if(table.children("tr").length>0){
-                table.children("tr").each(function(){
+            if(table.find("tr").length>0){
+                table.find("tr").each(function(){
                     var _url=BaseUrl+$(this).find("td:first-child a").prop("href"), _name=$(this).find("td:nth-child(2) font").text(), _id=md5(_name);
                     if(_name.search("限")!=-1) return;
                     if(_id in logData){
