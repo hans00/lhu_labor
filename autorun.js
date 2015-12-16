@@ -74,7 +74,7 @@ function get(ID, post,url){
             }
             var table=$(data).find("#DG_Content");
             if(table.find("tr").length>0){
-                table.find("tr").each(function(){
+                table.find("tr:not(:eq(0))").each(function(){
                     var _url=BaseUrl+$(this).find("td:first-child a").prop("href"), _name=$(this).find("td:nth-child(2) font").text(), _id=md5(_name);
                     if(_name.search("限")!=-1) return;
                     if(_id in logData){
