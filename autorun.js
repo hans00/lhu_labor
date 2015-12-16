@@ -27,7 +27,6 @@ if($("#labor_panel").length<1){
     });
 } else {
     $(document).ready(function(){
-        $("#display h1").html("已就緒");
         init_panel();
     });
 }
@@ -68,9 +67,9 @@ function get(ID, post,url){
                 return;
             }
             var table=$(data).find("#DG_Content");
-            if(table.children("tr").length>=1){
+            if(table.children("tr").length>0){
                 table.children("tr").each(function(){
-                    var _url=BaseUrl+$(e).find("td:first-child a").prop("href"), _name=$(e).find("td:nth-child(2) font").text(), _id=md5(_name);
+                    var _url=BaseUrl+$(this).find("td:first-child a").prop("href"), _name=$(this).find("td:nth-child(2) font").text(), _id=md5(_name);
                     if(_name.search("限")!=-1) return;
                     if(_id in logData){
                         logData[_id]={url:_url,name:_name,stat:0};
