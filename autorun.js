@@ -8,6 +8,7 @@ return new Za.prototype.init(a,b,c,d,e)}m.Tween=Za,Za.prototype={constructor:Za,
 
 if(location.hostname!="www.lhu.edu.tw" || window.location.protocol!="https:"){
     alert("請勿於非龍華學生系統的網頁上開啟此程式。");
+    location = "https://www.lhu.edu.tw/StudAp/index_log.aspx";
 }
 
 if(!window.jQuery){
