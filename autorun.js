@@ -59,6 +59,7 @@ function b(item, name){
 	}
 }
 function get(ID, post,url){
+    if(!en) return;
     post = (typeof post === 'undefined') ? false : post;
     url = (typeof url === 'undefined') ? null : url;
     if(ID=="list"){
@@ -106,7 +107,7 @@ function get(ID, post,url){
         .done(function(data){
             var btn=$(data).find("#Btn_Join"), val=logData[ID];
             console.log(ID);
-            console.log(logData[ID].url);
+            console.log(data);
             switch(btn.val()){
                 case "取消參加此活動":
                     logData[ID].stat=1;
