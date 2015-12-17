@@ -117,7 +117,7 @@ function get(ID, post,url){
                     log("勞作「"+val.name+"」已報名完成。");
                     return;
                 case "活動人數額滿":
-                    logData[e].stat=0;
+                    logData[ID].stat=0;
                     b(ID, val.name);
                     log("勞作「"+val.name+"」人數已額滿，重試中。");
                     return;
@@ -128,7 +128,7 @@ function get(ID, post,url){
                     return;
                 default:
                     log("勞作「"+val.name+"」資料抓取時發生錯誤。");
-                    logData[e].stat=0;
+                    logData[ID].stat=0;
                     
             }
         })
