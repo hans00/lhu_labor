@@ -98,16 +98,18 @@ function get(ID, post,url){
         }else{
             var m="POST",d=post;
         }
+        //console.log(logData[ID].url);
+        //console.log(url);
         $.ajax({
-            url: ((url!=null)?logData[ID].url:url),
+            url: ((url==null)?logData[ID].url:url),
             method: m,
             data: d,
             cache: false
         })
         .done(function(data){
             var btn=$(data).find("#Btn_Join"), val=logData[ID];
-            console.log(val.url);
-            console.log(data);
+            //console.log(val.url);
+            //console.log(data);
             switch(btn.val()){
                 case "取消參加此活動":
                     logData[ID].stat=1;
@@ -119,10 +121,14 @@ function get(ID, post,url){
                     b(ID, val.name);
                     log("勞作「"+val.name+"」人數已額滿，重試中。");
                     return;
-                default:
+                case "報名參加此活動":
                     var data={__VIEWSTATE:$(data).find("[name='__VIEWSTATE']").val(),Btn_Join:$(data).find("#Btn_Join").val()},url=$(data).find("#Labor_Apply_D").prop("action");
                     get(ID,data,BaseUrl+url.split("/").pop());
                     log("勞作「"+val.name+"」可以報名，嘗試中。");
+                    return;
+                default:
+                    log("勞作「"+val.name+"」資料抓取時發生錯誤。");
+                    logData[e].stat=0;
                     
             }
         })
