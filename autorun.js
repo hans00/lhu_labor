@@ -76,12 +76,12 @@ function get(ID, post,url){
             var table=$(data).find("#DG_Content");
             if(table.find("tr").length>0){
                 table.find("tr:not(:eq(0))").each(function(){
-                    var _url=BaseUrl+$(this).find("td:first-child a").prop("href").split("/").pop(), _name=$(this).find("td:nth-child(2) font").text(), _id=md5(_name);
+                    var _url=BaseUrl+$(this).find("td:first-child a").prop("href"), _name=$(this).find("td:nth-child(2) font").text(), _id=md5(_name);
                     //console.log(_name);
                     //console.log(_id);
                     if(_name.search("限")!=-1) return;
                     if(!(_id in logData)){
-                        logData[_id]={url:_url,name:_name,stat:0};
+                        logData[_id]={url:BaseUrl+_url.split("/").pop(),name:_name,stat:0};
                     }
                 });
             } else {
@@ -120,8 +120,8 @@ function get(ID, post,url){
                     log("勞作「"+val.name+"」人數已額滿，重試中。");
                     return;
                 default:
-                    var data={__VIEWSTATE:$(data).find("[name='__VIEWSTATE']").val(),Btn_Join:$(data).find("#Btn_Join").val()},url=BaseUrl+$(data).find("#Labor_Apply_D").prop("action").split("/").pop();
-                    get(ID,data,url);
+                    var data={__VIEWSTATE:$(data).find("[name='__VIEWSTATE']").val(),Btn_Join:$(data).find("#Btn_Join").val()},url=$(data).find("#Labor_Apply_D").prop("action");
+                    get(ID,data,BaseUrl+url.split("/").pop());
                     log("勞作「"+val.name+"」可以報名，嘗試中。");
                     
             }
