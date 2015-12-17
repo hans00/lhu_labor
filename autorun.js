@@ -106,7 +106,7 @@ function get(ID, post,url){
         })
         .done(function(data){
             var btn=$(data).find("#Btn_Join"), val=logData[ID];
-            console.log(ID);
+            console.log(val.url);
             console.log(data);
             switch(btn.val()){
                 case "取消參加此活動":
