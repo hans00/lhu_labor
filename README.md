@@ -25,10 +25,6 @@ javascript:(function(){var f=document.createElement('script');f.setAttribute('ty
 編譯過的最小化程式碼 &#40;以 ClosureCompiler 編譯&#41;
 ###autorun.src.js
 編譯前的 JavaScript 程式碼 &#40;以 ClosureCompiler 編譯&#41;
-###jquery.min.js
-當前 &#40;20151218&#41; 最新的 jQuery 最小化程式碼 &#40;直接插入 autorun 程式碼內而不外掛載入以減少 request 數量&#41;
-###md5.min.js
-MD5 Hash 於 JS 的實現，最小化程式碼 &#40;直接插入 autorun 程式碼內而不外掛載入以減少 request 數量&#41;
 ###panel.html
 控制面板
 ###panel.css
