@@ -57,4 +57,5 @@ html {
     height: calc(50vh - 17.5em);
     margin-top: 1.5em;
     overflow-y: scroll;
+    min-height: 5em;
 }
