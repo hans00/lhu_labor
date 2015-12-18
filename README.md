@@ -17,3 +17,12 @@
 javascript:(function(){var f=document.createElement('script');f.setAttribute('type','text/javascript');f.setAttribute('src','https://hans00.github.io/lhu_labor/autorun.js');document.getElementsByTagName('head')[0].appendChild(f)})()
 ```
 
+#檔案說明
+##autorun.js
+編譯過的最小化版本的程式碼
+##autorun.src.js
+編譯前的JavaScript程式碼
+##jquery.min.js
+當前(20151218)最新的jQuery最小化程式碼
+##md5.min.js
+MD5 Hash 於 JS 的實現，最小化程式碼
