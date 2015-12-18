@@ -22,10 +22,14 @@ javascript:(function(){var f=document.createElement('script');f.setAttribute('ty
 
 #檔案說明
 ###autorun.js
-編譯過的最小化版本的程式碼
+編譯過的最小化程式碼
 ###autorun.src.js
-編譯前的JavaScript程式碼
+編譯前的 JavaScript 程式碼
 ###jquery.min.js
-當前(20151218)最新的jQuery最小化程式碼
+當前 (20151218) 最新的 jQuery 最小化程式碼
 ###md5.min.js
 MD5 Hash 於 JS 的實現，最小化程式碼
+###panel.html
+控制面板
+###panel.css
+控制面板的 CSS
