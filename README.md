@@ -3,10 +3,9 @@
 
 #說明
 1. 本程式只是輔助作用，無法保證一定成功。
-2. 此程式之運作方式為 JavaScript 嵌入原資訊系統網頁以自動控制，請放心使用。
-3. 執行本程式時會消耗網路，請謹慎使用。
-4. 使用本程式前必須先登入龍華學生資訊系統。
-5. 本專案歡迎改作，不過請遵守「[Apache License 2.0](http://www.openfoundry.org/tw/legal-column-list/8950-obligations-of-apache-20)」的規則喔。
+2. 此程式之運作方式為 JavaScript 嵌入原資訊系統網頁以自動控制，會消耗網路流量。
+3. 使用本程式前必須先登入龍華學生資訊系統。
+4. 本專案歡迎改作，不過請遵守「[Apache License 2.0](http://www.openfoundry.org/tw/legal-column-list/8950-obligations-of-apache-20)」的規則。
 
 #使用方法
 1. 登入龍華學生資訊系統
