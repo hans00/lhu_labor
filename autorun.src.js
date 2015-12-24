@@ -58,7 +58,6 @@ if (typeof LABOR === 'undefined') {
 
     function get(ID, post) {
         if (!en) return;
-        post = (typeof post === 'undefined') ? false : post;
         if (ID == "list") {
             $.ajax({
                     url: BaseUrl + "Labor_Apply.aspx",
@@ -96,7 +95,7 @@ if (typeof LABOR === 'undefined') {
                     log("取得清單失敗：" + textStatus);
                 });
         } else {
-            if (post == false) {
+            if (typeof post === 'undefined') {
                 var m = "GET",
                     d = "";
             } else {
