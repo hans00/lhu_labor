@@ -1,10 +1,11 @@
 // ==ClosureCompiler==
 // @compilation_level SIMPLE_OPTIMIZATIONS
 // @output_file_name autorun.js
-// @code_url http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js
+// @code_url https://raw.githubusercontent.com/jgallen23/jquery-builder/0.7.0/dist/1.10.2/jquery-css-deprecated-dimensions-effects-event-alias-offset-wrap.min.js
 // @code_url https://raw.githubusercontent.com/blueimp/JavaScript-MD5/master/js/md5.js
 // ==/ClosureCompiler==
 // My autorun code
+
 if (typeof LABOR === 'undefined') {
     var LABOR = true;
 
@@ -20,7 +21,6 @@ if (typeof LABOR === 'undefined') {
                     document.write(data);
                 });
         }
-        init_panel();
     }
 
     var iList = 1000,
@@ -58,7 +58,7 @@ if (typeof LABOR === 'undefined') {
 
     function get(ID, post) {
         if (!en) return;
-        post = (typeof post === 'undefined')?false:post;
+        post = (typeof post === 'undefined') ? {} : post;
         if (ID == "list") {
             $.ajax({
                     url: BaseUrl + "Labor_Apply.aspx",
@@ -76,8 +76,6 @@ if (typeof LABOR === 'undefined') {
                             var _url = BaseUrl + $(this).find("td:first-child a").prop("href"),
                                 _name = $(this).find("td:nth-child(2) font").text(),
                                 _id = md5(_name);
-                            //console.log(_name);
-                            //console.log(_id);
                             if (_name.search("限") != -1) return;
                             if (!(_id in logData)) {
                                 logData[_id] = {
@@ -97,14 +95,13 @@ if (typeof LABOR === 'undefined') {
                 });
         } else {
             //console.log(post);
-            $.post(logData[ID].url,(post===false)?{}:post,function(data,status) {
-                if(status!="success")return;
-                var btn = $(data).find("#Btn_Join"),
-                    val = logData[ID],
-                    data = {
-                            __VIEWSTATE: $(data).find("[name='__VIEWSTATE']").val(),
-                            Btn_Join: $(data).find("#Btn_Join").val()
-                    };
+            $.post(logData[ID].url, post, function(data, status) {
+                if (status != "success") {
+                    log("取得勞作「" + logData[ID].name + "」狀態失敗：" + status);
+                    return;
+                }
+                var btn = $(data).find("#Btn_Join").val(),
+                    val = logData[ID];
                 switch (btn.val()) {
                     case "取消參加此活動":
                         logData[ID].stat = 1;
@@ -117,13 +114,15 @@ if (typeof LABOR === 'undefined') {
                         log("勞作「" + val.name + "」人數已額滿，重試中。");
                         return;
                     case "報名參加此活動":
-                        get(ID, data);
+                        get(ID, {
+                            __VIEWSTATE: $(data).find("[name='__VIEWSTATE']").val(),
+                            Btn_Join: btn
+                        });
                         log("勞作「" + val.name + "」可以報名，嘗試中。");
                         return;
                     default:
                         log("勞作「" + val.name + "」資料抓取時發生錯誤。");
                         logData[ID].stat = 0;
-
                 }
             });
         }
@@ -165,17 +164,14 @@ if (typeof LABOR === 'undefined') {
         iProc = p;
     }
 
-    function _switch(e) {
+    function _switch() {
         en = !en;
         if (en) {
             getlist();
         }
-        var val = (en) ? "結束" : "啟動";
-        $(e).text(val);
+        $("#switch").text((en) ? "結束" : "啟動");
     }
 
-    function init_panel() {
-        $("#display h1").html("已就緒");
-    }
-
+} else {
+    alert("請不要重複載入程式！");
 }
