@@ -26,7 +26,7 @@ html {
     padding: 1em;
     border: solid 2em;
     background: #aaa;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 #labor_panel ul, li {
     padding:0;
@@ -56,6 +56,7 @@ html {
 #labor_panel #li {
     height: calc(50vh - 17.5em);
     margin-top: 1.5em;
-    overflow-y: scroll;
+    overflow-y: auto;
     min-height: 5em;
+    width: 100%;
 }
