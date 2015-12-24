@@ -1,7 +1,7 @@
 // ==ClosureCompiler==
 // @compilation_level SIMPLE_OPTIMIZATIONS
 // @output_file_name autorun.js
-// @code_url https://raw.githubusercontent.com/jgallen23/jquery-builder/0.7.0/dist/1.10.2/jquery-css-deprecated-dimensions-effects-event-alias-offset-wrap.min.js
+// @code_url http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js
 // @code_url https://raw.githubusercontent.com/blueimp/JavaScript-MD5/master/js/md5.js
 // ==/ClosureCompiler==
 // My autorun code
