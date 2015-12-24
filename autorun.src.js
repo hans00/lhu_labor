@@ -102,7 +102,7 @@ if (typeof LABOR === 'undefined') {
                 }
                 var btn = $(data).find("#Btn_Join").val(),
                     val = logData[ID];
-                switch (btn.val()) {
+                switch (btn) {
                     case "取消參加此活動":
                         logData[ID].stat = 1;
                         a(ID, val.name);
