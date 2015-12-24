@@ -58,6 +58,7 @@ if (typeof LABOR === 'undefined') {
 
     function get(ID, post) {
         if (!en) return;
+        post = (typeof post === 'undefined')?false:post;
         if (ID == "list") {
             $.ajax({
                     url: BaseUrl + "Labor_Apply.aspx",
@@ -95,55 +96,36 @@ if (typeof LABOR === 'undefined') {
                     log("取得清單失敗：" + textStatus);
                 });
         } else {
-            if (typeof post === 'undefined') {
-                var m = "GET",
-                    d = "";
-            } else {
-                var m = "POST",
-                    d = post;
-            }
-            //console.log(logData[ID].url);
-            //console.log(url);
-            $.ajax({
-                    url: logData[ID].url,
-                    method: m,
-                    data: d,
-                    cache: false
-                })
-                .done(function(data) {
-                    var btn = $(data).find("#Btn_Join"),
-                        val = logData[ID];
-                    //console.log(val.url);
-                    //console.log(data);
-                    switch (btn.val()) {
-                        case "取消參加此活動":
-                            logData[ID].stat = 1;
-                            a(ID, val.name);
-                            log("勞作「" + val.name + "」已報名完成。");
-                            return;
-                        case "活動人數額滿":
-                            logData[ID].stat = 0;
-                            b(ID, val.name);
-                            log("勞作「" + val.name + "」人數已額滿，重試中。");
-                            return;
-                        case "報名參加此活動":
-                            var data = {
-                                    __VIEWSTATE: $(data).find("[name='__VIEWSTATE']").val(),
-                                    Btn_Join: $(data).find("#Btn_Join").val()
-                                };
-                            get(ID, data);
-                            log("勞作「" + val.name + "」可以報名，嘗試中。");
-                            return;
-                        default:
-                            log("勞作「" + val.name + "」資料抓取時發生錯誤。");
-                            logData[ID].stat = 0;
+            //console.log(post);
+            $.post(logData[ID].url,(post===false)?{}:post,function(data,status) {
+                if(status!="success")return;
+                var btn = $(data).find("#Btn_Join"),
+                    val = logData[ID],
+                    data = {
+                            __VIEWSTATE: $(data).find("[name='__VIEWSTATE']").val(),
+                            Btn_Join: $(data).find("#Btn_Join").val()
+                    };
+                switch (btn.val()) {
+                    case "取消參加此活動":
+                        logData[ID].stat = 1;
+                        a(ID, val.name);
+                        log("勞作「" + val.name + "」已報名完成。");
+                        return;
+                    case "活動人數額滿":
+                        logData[ID].stat = 0;
+                        b(ID, val.name);
+                        log("勞作「" + val.name + "」人數已額滿，重試中。");
+                        return;
+                    case "報名參加此活動":
+                        get(ID, data);
+                        log("勞作「" + val.name + "」可以報名，嘗試中。");
+                        return;
+                    default:
+                        log("勞作「" + val.name + "」資料抓取時發生錯誤。");
+                        logData[ID].stat = 0;
 
-                    }
-                })
-                .fail(function(jqXHR, textStatus, errorThrown) {
-                    log("取得活動狀態失敗：" + textStatus);
-                    logData[ID].stat = 0;
-                });
+                }
+            });
         }
     }
 
