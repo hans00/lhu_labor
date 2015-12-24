@@ -56,10 +56,9 @@ if (typeof LABOR === 'undefined') {
         }
     }
 
-    function get(ID, post, url) {
+    function get(ID, post) {
         if (!en) return;
         post = (typeof post === 'undefined') ? false : post;
-        url = (typeof url === 'undefined') ? null : url;
         if (ID == "list") {
             $.ajax({
                     url: BaseUrl + "Labor_Apply.aspx",
@@ -107,7 +106,7 @@ if (typeof LABOR === 'undefined') {
             //console.log(logData[ID].url);
             //console.log(url);
             $.ajax({
-                    url: ((url == null) ? logData[ID].url : url),
+                    url: logData[ID].url,
                     method: m,
                     data: d,
                     cache: false
@@ -132,9 +131,8 @@ if (typeof LABOR === 'undefined') {
                             var data = {
                                     __VIEWSTATE: $(data).find("[name='__VIEWSTATE']").val(),
                                     Btn_Join: $(data).find("#Btn_Join").val()
-                                },
-                                url = $(data).find("#Labor_Apply_D").prop("action");
-                            get(ID, data, BaseUrl + url.split("/").pop());
+                                };
+                            get(ID, data);
                             log("勞作「" + val.name + "」可以報名，嘗試中。");
                             return;
                         default:
