@@ -1,8 +1,11 @@
 # 自動搶龍華勞作程式
+
 造福龍華同學
+
 並且 DDoS 學校系統（誤
 
 Copyright &copy; by [Hans@LHU](mailto:D1044182013@gm.lhu.edu.tw)
+
 License : Apache License 2.0
 
 # 說明
