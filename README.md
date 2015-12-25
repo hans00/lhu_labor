@@ -4,10 +4,6 @@
 
 並且 DDoS 學校系統（誤
 
-Copyright &copy; by [Hans@LHU](mailto:D1044182013@gm.lhu.edu.tw)
-
-License : Apache License 2.0
-
 # 說明
 1. 本程式只是輔助作用，無法保證一定成功。
 2. 此程式之運作方式為 JavaScript 嵌入原資訊系統網頁並加以自動控制，會消耗網路流量。
