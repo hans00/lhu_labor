@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>自動搶勞作程式 @ LHU</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="jquery.min.js"></script>
-		<!--[if lte IE 9]><script type="text/javascript">alert("您的瀏覽器尚未被完整支援!\n建議改用其他瀏覽器。");location='https://www.google.com/chrome';</script><![endif]-->
-		<script>
-            var jsURL="javascript:(function(){var f=document.createElement('script');f.setAttribute('type','text/javascript');f.setAttribute('src','https://hans00.github.io/lhu_labor/autorun.js');document.getElementsByTagName('head')[0].appendChild(f)})()",Title="自動搶勞作程式 @ LHU";
-            function bookmark(){
-                if(window.sidebar){//FF
-                        window.sidebar.addPanel(jsURL,Title,Title);
-                    return false;
-                }else if(window.external && !navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)){//IE
-                        window.external.AddFavorite(jsURL,Title);
-                }else if(window.opera && window.print){//Opera
-                    var elem = document.createElement('a');
-                    elem.setAttribute('href',jsURL);
-                    elem.setAttribute('title',Title);
-                    elem.setAttribute('rel','sidebar');
-                    elem.click();
-                }else{
-                    $("#url").text(jsURL);
-                    $("#url").css("display","block");
-                    $("#url").prop("href",jsURL);
-                    
-                    alert("請將下方方框內「javascript」開頭的連結加至書籤內。");
-                }
-                alert("加入書籤（我的最愛）後，以後每次搶勞作時，只要登入學生資訊系統後擊書籤，即可啟動程式。");
-                return false;
-            }
-            function teach(){
-                var t = window.open("teach.html", "_blank", "toolbar=no, location=no, scrollbars=yes, resizable=yes, width=400, height=400");
-            }
-        </script>
-	</head>
-	<body>
-		<div id="display">
-			<h1>自動搶勞作程式 @ LHU</h1>
-			<div id="help">
-			    <h2>說明</h2>
-			    <p>1. 本程式只是輔助作用，無法保證一定成功。</p>
-			    <p>2. 此程式之運作方式為 JavaScript 嵌入原資訊系統網頁以自動控制，請放心使用。</p>
-			    <p>3. 執行本程式時會消耗網路，請謹慎使用。</p>
-			    <p>4. 使用本程式前必須先登入龍華學生資訊系統。</p>
-                <p>5. 本專案以開源方式公布在 GitHub 上，歡迎改作，不過請遵守「<a target="_blank" href="http://www.openfoundry.org/tw/legal-column-list/8950-obligations-of-apache-20">Apache License 2.0</a>」的規則喔。</p>
-			</div>
-			<a href="#" onclick="teach();return false;" class="btn">啟動教學</a>
-			<a href="#" onclick="bookmark();return false;"  class="btn">加入書籤</a>
-            <a id="url"></a>
-		</div>
-	</body>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>lhu_labor by hans00</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>lhu_labor</h1>
+        <h2>自動搶龍華勞作</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/hans00/lhu_labor/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/hans00/lhu_labor/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/hans00/lhu_labor" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="自動搶龍華勞作程式" class="anchor" href="#%E8%87%AA%E5%8B%95%E6%90%B6%E9%BE%8D%E8%8F%AF%E5%8B%9E%E4%BD%9C%E7%A8%8B%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>自動搶龍華勞作程式</h1>
+
+<p>DDoS 學校系統（誤</p>
+
+<h1>
+<a id="說明" class="anchor" href="#%E8%AA%AA%E6%98%8E" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>說明</h1>
+
+<ol>
+<li>懂的人歡迎改作。</li>
+<li>由於功能強大，所以這裡只放執行用程式碼，有慧根的默默使用就好。</li>
+</ol>
+
+<h1>
+<a id="執行用程式碼" class="anchor" href="#%E5%9F%B7%E8%A1%8C%E7%94%A8%E7%A8%8B%E5%BC%8F%E7%A2%BC" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>執行用程式碼</h1>
+
+<div class="highlight highlight-source-js"><pre>javascript<span class="pl-k">:</span>(<span class="pl-k">function</span>(){<span class="pl-k">var</span> f<span class="pl-k">=</span><span class="pl-c1">document</span>.<span class="pl-c1">createElement</span>(<span class="pl-s"><span class="pl-pds">'</span>script<span class="pl-pds">'</span></span>);<span class="pl-smi">f</span>.<span class="pl-c1">setAttribute</span>(<span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>text/javascript<span class="pl-pds">'</span></span>);<span class="pl-smi">f</span>.<span class="pl-c1">setAttribute</span>(<span class="pl-s"><span class="pl-pds">'</span>src<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>https://hans00.github.io/lhu_labor/autorun.js<span class="pl-pds">'</span></span>);<span class="pl-c1">document</span>.<span class="pl-c1">getElementsByTagName</span>(<span class="pl-s"><span class="pl-pds">'</span>head<span class="pl-pds">'</span></span>)[<span class="pl-c1">0</span>].<span class="pl-c1">appendChild</span>(f)})()</pre></div>
+      </section>
+    </div>
+
+    
+  </body>
 </html>

@@ -1,0 +1,6 @@
+{
+  "name": "lhu_labor",
+  "tagline": "自動搶龍華勞作",
+  "body": "# 自動搶龍華勞作程式\r\n\r\nDDoS 學校系統（誤\r\n\r\n# 說明\r\n1. 懂的人歡迎改作。\r\n2. 由於功能強大，所以這裡只放執行用程式碼，有慧根的默默使用就好。\r\n\r\n# 執行用程式碼\r\n```javascript\r\njavascript:(function(){var f=document.createElement('script');f.setAttribute('type','text/javascript');f.setAttribute('src','https://hans00.github.io/lhu_labor/autorun.js');document.getElementsByTagName('head')[0].appendChild(f)})()\r\n```\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
